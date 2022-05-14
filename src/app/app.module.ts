@@ -8,6 +8,10 @@ import { ListallComponent } from './therapist/listall/listall.component';
 import { ListoneComponent } from './therapist/listone/listone.component';
 import { EditComponent } from './therapist/edit/edit.component';
 import { CreateComponent } from './therapist/create/create.component';
+import { PostComponent } from './user/post/post.component';
+import { DeleteComponent } from './post/delete/delete.component';
+import { ViewComponent } from './admin/view/view.component';
+import { AddComponent } from './admin/add/add.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { CreateComponent } from './therapist/create/create.component';
     ListallComponent,
     ListoneComponent,
     EditComponent,
-    CreateComponent
+    CreateComponent,
+    PostComponent,
+    DeleteComponent,
+    ViewComponent,
+    AddComponent
   ],
   imports: [
     BrowserModule,
