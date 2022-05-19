@@ -1,6 +1,6 @@
 export class post {
-    id: number;
-    postTitle: string;
+    postId: number;
+    title: string;
     content: string;
     userName: string;
     timestamp: EpochTimeStamp;
