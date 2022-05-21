@@ -12,6 +12,7 @@ import { PostComponent } from './user/post/post.component';
 import { DeleteComponent } from './post/delete/delete.component';
 import { ViewComponent } from './admin/view/view.component';
 import { AddComponent } from './admin/add/add.component';
+import { LoginComponent } from './src/app/login.register/login/login.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AddComponent } from './admin/add/add.component';
     PostComponent,
     DeleteComponent,
     ViewComponent,
-    AddComponent
+    AddComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
