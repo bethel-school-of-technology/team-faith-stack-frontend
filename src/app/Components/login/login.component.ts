@@ -1,25 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsersService } from 'src/app/services/users.service';
-
-@Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
-})
-export class LoginComponent implements OnInit {
-
-  loginForm = {
-    username: "",
-    password: ""
-  }
-  token: string = '';
-  error: string = '';
-
-  constructor(private usersService: UsersService, private router: Router) { }
-
-  ngOnInit(): void { }
-
+  
+  @Component({
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.css']
+  })
+  export class LoginComponent implements OnInit {
+  
+    loginForm = {
+      username: "",
+      password: ""
+    }
+    token: string = '';
+    error: string = '';
+  
+    constructor(private usersService: UsersService, private router: Router) { }
+  
+    ngOnInit(): void { }
+  
   onLogin() {
     console.log(this.loginForm.username + "logged in successfully!");
     this.usersService.loginUser(this.loginForm.username, this.loginForm.password)
