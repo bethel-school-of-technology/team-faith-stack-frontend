@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './listall.component.html',
   styleUrls: ['./listall.component.css']
 })
-export class ListallComponent implements OnInit {
+export class PostListallComponent implements OnInit {
 
   constructor() { }
 

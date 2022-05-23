@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListoneComponent } from './listone.component';
+import { TherapistListoneComponent } from './listone.component';
 
 describe('ListoneComponent', () => {
-  let component: ListoneComponent;
-  let fixture: ComponentFixture<ListoneComponent>;
+  let component: TherapistListoneComponent;
+  let fixture: ComponentFixture<TherapistListoneComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListoneComponent ]
+      declarations: [ TherapistListoneComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ListoneComponent);
+    fixture = TestBed.createComponent(TherapistListoneComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

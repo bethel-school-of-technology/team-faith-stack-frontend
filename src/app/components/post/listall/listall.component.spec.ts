@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListallComponent } from './listall.component';
+import { PostListallComponent } from './listall.component';
 
 describe('ListallComponent', () => {
-  let component: ListallComponent;
-  let fixture: ComponentFixture<ListallComponent>;
+  let component: PostListallComponent;
+  let fixture: ComponentFixture<PostListallComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListallComponent ]
+      declarations: [ PostListallComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ListallComponent);
+    fixture = TestBed.createComponent(PostListallComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
