@@ -1,5 +1,5 @@
 export class therapist {
-    id: number;
+    therapistId: number;
     fullName: string;
     businessName: string;
     address: string;
