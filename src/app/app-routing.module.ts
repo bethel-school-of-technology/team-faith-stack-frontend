@@ -1,23 +1,50 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AddComponent } from './Components/admin/add.admin/add.component';
-import { DeleteComponent } from './Components/admin/delete.admin/delete.component';
-import { EditComponent } from './Components/admin/edit.admin/edit.component';
-import { ViewComponent } from './Components/admin/view.admin/view.component';
-import { LoginComponent } from './Components/login/login.component';
-import { RegisterComponent } from './Components/register/register.component';
-import { CreateComponent } from './Components/post/create.post/create.component';
-import { DeleteComponent } from './Components/post/delete.post/delete.component';
-import { EditComponent } from './Components/post/edit.post/edit.component';
-import { ListallComponent } from './Components/post/listall.post/listall.component';
-import { CreateComponent } from './Components/create.therapist/create.component';
-import { EditComponent } from './Components/therapist/edit.therapist/edit.component';
-import { ListallComponent } from './Components/therapist/listall.therapist/listall.component';
-import { ListoneComponent } from './Components/therapist/listone.therapist/listone.component';
-import { EditComponent } from './Components/user/edit.user/edit.component';
-import { PostComponent } from './Components/user/post.user/post.component';
+import { AdminAddComponent } from './components/admin/add/add.component';
+import { AdminDeleteComponent } from './components/admin/delete/delete.component';
+import { AdminEditComponent } from './components/admin/edit/edit.component';
+import { AdminViewComponent } from './components/admin/view/view.component';
+import { PostCreateComponent } from './components/post/create/create.component';
+import { PostDeleteComponent } from './components/post/delete/delete.component';
+import { PostEditComponent } from './components/post/edit/edit.component';
+import { PostListallComponent } from './components/post/listall/listall.component';
+import { TherapistCreateComponent } from './components/therapist/create/create.component';
+import { TherapistEditComponent } from './components/therapist/edit/edit.component';
+import { TherapistListoneComponent } from './components/therapist/listone/listone.component';
+import { TherapistListallComponent } from './components/therapist/listall/listall.component';
+import { UserEditComponent } from './components/user/edit/edit.component';
+import { UserPostComponent } from './components/user/post/post.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: "admin/add", component: AdminAddComponent },
+
+  { path: "admin/delete", component: AdminDeleteComponent },
+
+  { path: "admin/edit", component: AdminEditComponent},
+
+  { path: "admin/view", component: AdminViewComponent},
+
+  { path: "post/create", component: PostCreateComponent},
+
+  { path: "post/delete", component: PostDeleteComponent},
+
+  { path: "post/edit", component: PostEditComponent},
+
+  { path: "post/listall", component: PostListallComponent},
+
+  { path: "therapist/create", component: TherapistCreateComponent},
+
+  { path: "therapist/edit", component: TherapistEditComponent},
+
+  { path: "therapist/listall", component: TherapistListallComponent},
+
+  { path: "therapist/listone", component: TherapistListoneComponent},
+
+  { path: "user/edit", component: UserEditComponent},
+
+  { path: "user/post", component: UserPostComponent}
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
