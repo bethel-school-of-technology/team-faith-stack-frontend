@@ -16,18 +16,18 @@ import { UsersService } from 'src/app/services/users.service';
     token: string = '';
     error: string = '';
   
-    constructor(private usersService: UsersService, private router: Router) { }
+    constructor(private UsersService: UsersService, private router: Router) { }
   
     ngOnInit(): void { }
   
   onLogin() {
     console.log(this.loginForm.username + "logged in successfully!");
-    this.usersService.loginUser(this.loginForm.username, this.loginForm.password)
+    this.UsersService.loginUser(this.loginForm.username, this.loginForm.password)
       .subscribe(
         res => {
           this.token = res.headers.get("Authorization");
           localStorage.setItem("token", this.token);
-          this.usersService.isLoggedIn();
+          this.UsersService.isLoggedIn();
           this.router.navigate(["home"]);
         },
         error => {
