@@ -3,5 +3,5 @@ export class post {
     title: string;
     content: string;
     userName: string;
-    timestamp: EpochTimeStamp;
+    timestamp: Date;
 }
