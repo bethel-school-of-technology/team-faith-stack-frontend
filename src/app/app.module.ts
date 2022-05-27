@@ -14,10 +14,14 @@ import { PostListallComponent } from './Components/post/listall/listall.componen
 import { TherapistListallComponent } from './Components/therapist/listall/listall.component';
 import { UserEditComponent } from './Components/user/edit/edit.component';
 import { UserPostComponent } from './Components/user/post/post.component';
+import { LoginComponent } from './Components/login/login.component';
+import { RegisterComponent } from './Components/register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    LoginComponent,
+    RegisterComponent,
     PostDeleteComponent,
     PostListallComponent,
     PostCreateComponent,
