@@ -1,0 +1,25 @@
+
+<h3>Login: </h3>
+<br>
+
+<div class="container">
+    <form>
+        <div class="form-group">
+            <label for="username">Username:</label>
+             
+                <input type="text" name="username" id="username" placeholder="Username" required
+                [(ngModel)]="loginForm.username" #username="ngModel">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" name="password" class="form-control" id="password" placeholder="Password"
+                [(ngModel)]="loginForm.password" #password="ngModel">
+        </div>
+    </form>
+</div>
+<div class="container">
+    <div class="onLogin">
+<button type="button" class="btn btn-lg" (click)="onLogin()">Login</button>
+</div>
+</div>
