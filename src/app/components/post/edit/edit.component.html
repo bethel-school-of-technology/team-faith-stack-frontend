@@ -1,1 +1,28 @@
-<p>edit works!</p>
+<div>
+    <h1>BREATH</h1>
+</div>
+
+<div>
+    <nav>
+        <!-- Link to user.profile.html -->
+        <a routerLink="">Profile</a>
+
+        <!-- Link to Therapists List -->
+        <a routerLink="/therapist/listall"> View Therapists</a>
+
+        <!-- Link to Login/register or welcome.html -->
+        <a routerLink="/login">Logout</a>
+    </nav>
+</div>
+
+<br><br>
+
+<!-- Edit post -->
+<form>
+    <label for="editPost">Edit Your Post:</label>
+    <br>
+
+    <textarea id="editPost" name="editPost"></textarea>
+    <!-- [(ngModel)]="post.content" -->
+    <button type="submit">Post</button>
+</form>

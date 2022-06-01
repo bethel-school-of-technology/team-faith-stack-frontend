@@ -1,1 +1,44 @@
-<p>listall works!</p>
+<div>
+    <h1>BREATH</h1>
+</div>
+
+<div>
+    <nav>
+        <!-- Link to user.profile.html -->
+        <a routerLink="">Profile</a>
+
+        <!-- Link to Therapists List -->
+        <a routerLink="/therapist/listall"> View Therapists</a>
+
+        <!-- Link to Login/register or welcome.html -->
+        <a routerLink="/login">Logout</a>
+    </nav>
+</div>
+<br><br>
+
+
+<!-- Create new post -->
+
+<form>
+    <!-- (ngSubmit) = "method to create post" -->
+    <input id="postTitle" name="postTitle" type="text" placeholder="Post Title">
+    <!-- [(ngModel)] = "post.title" -->
+
+    <br>
+
+    <textarea id="newPost" placeholder="What's on your mind?" name="newPost"></textarea>
+    <!-- [(ngModel)]="post.content" -->
+    <button type="submit">Post</button>
+</form>
+
+
+<!-- pull from Db and list all posts -->
+
+<!-- <ul>
+            <li *ngFor = "let p of posts">
+                <a [routerLink] = '[/post/listall, p.id>'> {{p.content}}</a>
+                <br>
+                <button (click) = 'editPost(p.id)'>Edit</button>
+            </li>
+            
+        </ul> -->

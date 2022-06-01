@@ -1,3 +1,5 @@
+// import { HttpClientModule, HttpClient } from '@angular/common/http';
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -13,3 +15,15 @@ export class PostListallComponent implements OnInit {
   }
 
 }
+
+// export class PostListallComponent implements OnInit {
+
+//   constructor(private httpService: HttpClient) { }
+//   posts: string[];
+//   ngOnInit(): void {
+//     this.httpService.get('').subscribe(
+//       data => {
+//         this.posts = data as string[];
+//       }
+//     );
+//   }
