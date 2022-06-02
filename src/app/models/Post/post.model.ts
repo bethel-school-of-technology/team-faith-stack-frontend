@@ -1,7 +1,7 @@
 export class post {
-    postId: number;
+    postId?: number;
     title: string;
     content: string;
-    userName: string;
-    timestamp: Date;
+    UserName?: string;
+    timestamp?: Date;
 }

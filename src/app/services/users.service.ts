@@ -65,4 +65,9 @@ export class UsersService implements CanActivate {
       return true;
     }
   }
+
+  createPost(newPostData) {
+    return this.http.post('https://localhost:7102/api/Posts', newPostData);
+  }
+
 }

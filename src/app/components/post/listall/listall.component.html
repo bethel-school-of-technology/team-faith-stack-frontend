@@ -21,16 +21,22 @@
 
 <form>
     <!-- (ngSubmit) = "method to create post" -->
-    <input id="postTitle" name="postTitle" type="text" placeholder="Post Title">
+    <input id="title"  [(ngModel)]="newPost.title" name="title" type="text" placeholder="Post Title">
     <!-- [(ngModel)] = "post.title" -->
 
     <br>
 
-    <textarea id="newPost" placeholder="What's on your mind?" name="newPost"></textarea>
+    <textarea id="content"  [(ngModel)]="newPost.content" placeholder="What's on your mind?" name="content"></textarea>
     <!-- [(ngModel)]="post.content" -->
-    <button type="submit">Post</button>
+    <button type="button" (click)="sendForm()">Post</button>
 </form>
 
+
+<div *ngFor="let post of posts">
+    <h3>{{ post.title }}</h3>
+    <i>{{ post.UserName }}</i><br>
+    <p>{{ post.content }} </p>
+</div>
 
 <!-- pull from Db and list all posts -->
 
