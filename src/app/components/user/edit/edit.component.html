@@ -1,1 +1,20 @@
-<p>edit works!</p>
+<hr>
+<h3>Edit User | {{editUser.firstName}}</h3>
+<hr>
+<form (ngSubmit) = "editUser()">
+    <label>First Name: </label>
+    <input type="text" name="firstName" [(ngModel)] = "editUser.firstName"> 
+    <br>
+    <label>Last Name: </label>
+    <input type="text" name="lastName" [(ngModel)] = "editUser.lastName"> 
+    <br>
+    <label>Username: </label>
+    <input type="text" name="username" [(ngModel)] = "editUser.Username"> 
+    <br>
+    <label>Email: </label>
+    <input type="text" name="email" [(ngModel)] = "editUser.Email"> 
+    <br>
+    <label>Phone Number: </label>
+    <input type="text" name="phoneNumber" [(ngModel)] = "editUser.phoneNumber"> 
+    <br>
+</form>

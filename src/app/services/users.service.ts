@@ -11,6 +11,7 @@ import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from
 // Code for authentication taken from: https://developer.okta.com/blog/2019/05/16/angular-authentication-jwt#add-an-angular-client-with-jwt-authentication
 export class UsersService implements CanActivate {
 
+
   // environment.apiBaseUrlUsers: 'http://localhost:8080'
   apiServerUrl: string = environment.apiBaseUrlUsers;
 
@@ -64,5 +65,10 @@ export class UsersService implements CanActivate {
       console.log("isUserLoggedIn: " + this.isUserLoggedIn);
       return true;
     }
+  }
+
+  // editing a user 
+  updateUser(editID: number, edittedInfo: user): Observable<user>{
+    return this.http.put<user>(`${this.apiServerUrl}/${editID}`, edittedInfo)
   }
 }
