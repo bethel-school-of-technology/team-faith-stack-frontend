@@ -23,6 +23,12 @@
     </div>
     <br>
     <div class="form-group">
+        <label for="email">email:</label>
+         <input type="text" class="form-control" id="email" placeholder="email" 
+            [(ngModel)]="newUser.email" #email="ngModel"> 
+    </div>
+    <br>
+    <div class="form-group">
         <label for="password">Password:</label>
          <input type="text" class="form-control" id="password" placeholder="Password"
             [(ngModel)] ="newUser.password" #password="ngModel"> 
