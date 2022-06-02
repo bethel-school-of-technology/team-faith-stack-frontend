@@ -1,0 +1,123 @@
+* {
+    text-align: center;
+} 
+
+.one {
+    border-radius: 2mm;
+    border: solid black;
+    margin-left: 400px;
+    margin-right: 400px;
+    background-color: lightblue;
+}
+
+.one:hover {
+    transform: scale(1.1);
+    background: #ff800a;
+    box-shadow: 2px 2px 2px #000;
+    z-index: 2;
+}
+
+.two {
+    border-radius: 2mm;
+    border: solid black;
+    margin-left: 400px;
+    margin-right: 400px;
+    background-color: lightblue;
+}
+
+.two:hover {
+    transform: scale(1.1);
+    background: #ff800a;
+    box-shadow: 2px 2px 2px #000;
+    z-index: 2;
+}
+
+.three {
+    border-radius: 2mm;
+    border: solid black;
+    margin-left: 400px;
+    margin-right: 400px;
+    background-color: lightblue;
+}
+
+.three:hover {
+    transform: scale(1.1);
+    background: #ff800a;
+    box-shadow: 2px 2px 2px #000;
+    z-index: 2;
+}
+
+.four {
+    border-radius: 2mm;
+    border: solid black;
+    margin-left: 400px;
+    margin-right: 400px;
+    background-color: lightblue;
+}
+
+.four:hover {
+    transform: scale(1.1);
+    background: #ff800a;
+    box-shadow: 2px 2px 2px #000;
+    z-index: 2;
+}
+
+.five {
+    border-radius: 2mm;
+    border: solid black;
+    margin-left: 400px;
+    margin-right: 400px;
+    background-color: lightblue;
+}
+
+.five:hover {
+    transform: scale(1.1);    
+    background: #ff800a;
+    box-shadow: 2px 2px 2px #000;
+    z-index: 2;
+}
+
+.six {
+    border-radius: 2mm;
+    border: solid black;
+    margin-left: 400px;
+    margin-right: 400px;
+    background-color: lightblue;
+}
+
+.six:hover {
+    transform: scale(1.1);
+    background: #ff800a;
+    box-shadow: 2px 2px 2px #000;
+    z-index: 2;
+}
+
+.seven {
+    border-radius: 2mm;
+    border: solid black;
+    margin-left: 400px;
+    margin-right: 400px;
+    background-color: lightblue;
+}
+
+.seven:hover {
+    transform: scale(1.1);
+    background: #ff800a;
+    box-shadow: 2px 2px 2px #000;
+    z-index: 2;
+}
+
+.eight {
+    border-radius: 2mm;
+    border: solid black;
+    margin-left: 400px;
+    margin-right: 400px;
+    background-color: lightblue;
+}
+
+.eight:hover {
+    transform: scale(1.1);
+    background: #ff800a;
+    box-shadow: 2px 2px 2px #000;
+    z-index: 2;
+}

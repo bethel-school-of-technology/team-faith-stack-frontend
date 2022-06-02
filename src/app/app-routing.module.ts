@@ -27,7 +27,9 @@ const routes: Routes = [
 
   { path: "user/edit", component: UserEditComponent},
 
-  { path: "user/post", component: UserPostComponent}
+  { path: "user/post", component: UserPostComponent},
+
+  { path: "", redirectTo: "welcome", pathMatch: "full"}
 
 ];
 
