@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { map, Subscription } from 'rxjs';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -28,14 +29,17 @@ import { RegisterComponent } from './Components/register/register.component';
     UserPostComponent,
     PostEditComponent,
     TherapistListallComponent,
-    UserEditComponent
+    UserEditComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
     RouterModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    Subscription
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
