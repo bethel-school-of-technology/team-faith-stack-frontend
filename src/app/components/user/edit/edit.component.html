@@ -9,12 +9,18 @@
     <input type="text" name="lastName" [(ngModel)] = "editUser.lastName"> 
     <br>
     <label>Username: </label>
-    <input type="text" name="username" [(ngModel)] = "editUser.Username"> 
+    <input type="text" name="username" [(ngModel)] = "editUser.userName"> 
     <br>
     <label>Email: </label>
-    <input type="text" name="email" [(ngModel)] = "editUser.Email"> 
+    <input type="text" name="email" [(ngModel)] = "editUser.email"> 
     <br>
-    <label>Phone Number: </label>
-    <input type="text" name="phoneNumber" [(ngModel)] = "editUser.phoneNumber"> 
+    <label>Password </label>
+    <input type="text" name="password" [(ngModel)] = "editUser.password"> 
     <br>
+
+    <div class="container">
+        <div class="edit">
+    <button type="button" class="btn btn-lg" (click)="editUser()">Create Account</button>
+        </div>
+    </div>
 </form>

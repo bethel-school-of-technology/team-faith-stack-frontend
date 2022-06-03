@@ -19,7 +19,7 @@ export class UserEditComponent implements OnInit {
   ngOnInit(): void {
     this.userID = parseInt(this.actRoute.snapshot.paramMap.get("userId"));
 
-    this.usersService.getUserInfo(this.userID).subscribe(response => {
+    this.usersService.getUserInfo().subscribe(response => {
       this.editUser = response;
     })
   }

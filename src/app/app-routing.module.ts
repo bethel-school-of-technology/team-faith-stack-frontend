@@ -25,9 +25,9 @@ const routes: Routes = [
 
   { path: "therapist/listall", component: TherapistListallComponent},
 
-  { path: "user/edit", component: UserEditComponent},
+  { path: "user/edit/:id", component: UserEditComponent},
 
-  { path: "user/post", component: UserPostComponent},
+  { path: "user/post/:id", component: UserPostComponent},
 
   { path: "", redirectTo: "welcome", pathMatch: "full"}
 
