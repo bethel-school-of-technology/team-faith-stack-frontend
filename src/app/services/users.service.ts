@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { user } from '../models/user/user.model'
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 
@@ -65,4 +65,11 @@ export class UsersService implements CanActivate {
       return true;
     }
   }
+
+    // User Profile - finding one
+    findOne(id: number): Observable<user> {
+      return this.http.get<user>('api/users/' + id).pipe(
+        map((user: user) => user)
+      )
+    }
 }

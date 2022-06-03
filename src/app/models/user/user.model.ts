@@ -6,5 +6,6 @@ export class user {
     lastName: string;
     email: string;
     password: string;
+    profileImage: string;
 
 }
