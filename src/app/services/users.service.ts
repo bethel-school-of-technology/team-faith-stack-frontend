@@ -50,7 +50,7 @@ export class UsersService implements CanActivate {
     let myHeaders = {
       Authorization: "Bearer " + localStorage.getItem("token")
     }
-    return this.http.get(`${this.apiServerUrl}/api/users/find/username`, {headers: myHeaders});
+    return this.http.get(`${this.apiServerUrl}/api/Users/find/username`, {headers: myHeaders});
   }
 
   isLoggedIn(): boolean {
@@ -68,7 +68,7 @@ export class UsersService implements CanActivate {
 
     // User Profile - finding one
     findOne(id: number): Observable<user> {
-      return this.http.get<user>('api/users/' + id).pipe(
+      return this.http.get<user>('api/Users' + id).pipe(
         map((user: user) => user)
       )
     }
