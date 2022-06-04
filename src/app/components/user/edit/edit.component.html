@@ -1,7 +1,8 @@
 <hr>
 <h3>Edit User | {{editUser.firstName}}</h3>
 <hr>
-<form (ngSubmit) = "editUser()">
+<!-- <form (ngSubmit) = "editUser()"> -->
+<form>
     <label>First Name: </label>
     <input type="text" name="firstName" [(ngModel)] = "editUser.firstName"> 
     <br>
@@ -20,7 +21,7 @@
 
     <div class="container">
         <div class="edit">
-    <button type="button" class="btn btn-lg" (click)="editUser()">Create Account</button>
+    <button type="button" class="btn btn-lg" (click)="edittedUser()">Edit Account</button>
         </div>
     </div>
 </form>
