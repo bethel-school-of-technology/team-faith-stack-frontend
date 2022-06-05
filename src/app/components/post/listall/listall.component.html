@@ -20,31 +20,17 @@
 <!-- Create new post -->
 
 <form>
-    <!-- (ngSubmit) = "method to create post" -->
-    <input id="title"  [(ngModel)]="newPost.title" name="title" type="text" placeholder="Post Title">
-    <!-- [(ngModel)] = "post.title" -->
-
+    <input id="title" [(ngModel)]="newPost.title" name="title" type="text" placeholder="Post Title">
     <br>
-
-    <textarea id="content"  [(ngModel)]="newPost.content" placeholder="What's on your mind?" name="content"></textarea>
-    <!-- [(ngModel)]="post.content" -->
+    <textarea id="content" [(ngModel)]="newPost.content" placeholder="What's on your mind?" name="content"></textarea>
+    <br>
     <button type="button" (click)="sendForm()">Post</button>
 </form>
 
-
+<!-- "let post of posts.reverse()" to reverse listing order, making newest post at top? -->
 <div *ngFor="let post of posts">
     <h3>{{ post.title }}</h3>
     <i>{{ post.UserName }}</i><br>
     <p>{{ post.content }} </p>
+    <!-- <button type="button" (click)="editPost(post)">Edit</button> -->
 </div>
-
-<!-- pull from Db and list all posts -->
-
-<!-- <ul>
-            <li *ngFor = "let p of posts">
-                <a [routerLink] = '[/post/listall, p.id>'> {{p.content}}</a>
-                <br>
-                <button (click) = 'editPost(p.id)'>Edit</button>
-            </li>
-            
-        </ul> -->

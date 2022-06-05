@@ -39,17 +39,4 @@ export class PostListallComponent implements OnInit {
     });
 
   }
-
 }
-
-// export class PostListallComponent implements OnInit {
-
-//   constructor(private httpService: HttpClient) { }
-//   posts: string[];
-//   ngOnInit(): void {
-//     this.httpService.get('').subscribe(
-//       data => {
-//         this.posts = data as string[];
-//       }
-//     );
-//   }

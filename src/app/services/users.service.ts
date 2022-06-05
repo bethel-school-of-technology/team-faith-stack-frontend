@@ -70,4 +70,9 @@ export class UsersService implements CanActivate {
     return this.http.post('https://localhost:7102/api/Posts', newPostData);
   }
 
+  // editPost(editPostId: number, postToEdit: post) :Observable<post> {
+  //   return this.http.put<post>('https://localhost:7102/api/Posts' + '/' +editPostId, postToEdit)
+
+  // }
+
 }
