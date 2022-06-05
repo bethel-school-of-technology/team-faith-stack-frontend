@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="register.css">
+    </head>
+<body>
+    <div class="login-form">
+        <h1>Register Now</h1>
+        <form>
+        <p>First Name</p>
+         <input type="text" class="form-control" id="firstName" placeholder="First name"
+            required [(ngModel)]="newUser.firstName" #firstName="ngModel"> 
+        <p>Last Name</p>
+        <input type="text" class="form-control" id="lastName" placeholder="Last name"
+            [(ngModel)]="newUser.lastName" #lastName="ngModel"> 
+            <p>User Name</p>
+            <input type="text" name="username" id="username" placeholder="Username" required
+                [(ngModel)]="loginForm.username" #username="ngModel">
+            <p>Password</p>
+            <input type="password" name="password" class="form-control" id="password" placeholder="Password"
+                [(ngModel)]="loginForm.password" #password="ngModel">
+            <button type="button" class="btn btn-lg" (click)="onLogin()"><span></span>Login</button>
+        </form>
+    </div>
+</body>
+</html>

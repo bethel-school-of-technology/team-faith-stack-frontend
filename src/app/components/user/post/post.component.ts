@@ -1,12 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< Updated upstream
-=======
-import { ActivatedRoute, Router } from '@angular/router';
-// import { parse } from 'path';
-// import { map, Subscription } from 'rxjs';
-import { user } from 'src/app/models/user/user.model';
-import { UsersService } from 'src/app/services/users.service';
->>>>>>> Stashed changes
 
 @Component({
   selector: 'app-post',
