@@ -32,5 +32,6 @@
     <h3>{{ post.title }}</h3>
     <i>{{ post.UserName }}</i><br>
     <p>{{ post.content }} </p>
+    <a [routerLink]="['/', 'post', 'edit', post.postId]" >edit</a>
     <!-- <button type="button" (click)="editPost(post)">Edit</button> -->
 </div>

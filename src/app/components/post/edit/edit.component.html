@@ -19,9 +19,9 @@
 
 <!-- Edit post -->
 <form>
-    <label for="editPost">Edit Your Post:</label>
+    <input id="title" [(ngModel)]="editPost.title" name="title" type="text" placeholder="Post Title">
     <br>
-    <!-- <input id="editTitle" name="editTitle" type="text" [(ngModel)]="post.title">
-    <textarea id="editPostContent" name="editPostContent" [(ngModel)]="post.content"></textarea> -->
-    <!-- <button type="submit" (onclick)="()">Update</button> -->
+    <textarea id="content" [(ngModel)]="editPost.content" placeholder="What's on your mind?" name="content"></textarea>
+    <br>
+    <button type="button" (click)="sendForm()">Post</button>
 </form>
