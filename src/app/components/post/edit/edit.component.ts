@@ -12,6 +12,6 @@ export class PostEditComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // updatePost()
+
 
 }

@@ -24,6 +24,9 @@ export class PostListallComponent implements OnInit {
 
   }
 
+
+
+// get and show all posts
   loadAllPosts() {
     this.http.get('https://localhost:7102/api/Posts').subscribe(response => {
       console.log(response);
@@ -31,6 +34,7 @@ export class PostListallComponent implements OnInit {
     });
   }
 
+// create a new post
   sendForm() {
     
     this.usersService.createPost(this.newPost).subscribe(response => {
@@ -39,4 +43,10 @@ export class PostListallComponent implements OnInit {
     });
 
   }
+
+// get and update a post
+
+
+
+// save updated post
 }
