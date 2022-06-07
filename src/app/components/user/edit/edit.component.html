@@ -1,1 +1,41 @@
-<p>edit works! just checking to see if this push works</p>
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<!-- <form (ngSubmit) = "editUser()"> -->
+<body>
+    <section class="wrapper">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+    </section>
+    <div class="banner">
+        <div class="navbar">
+            <ul>
+            <li><a class="nav-item" [routerLink]="['/about']">About</a></li>
+            <li><a href="emergency.html">Emergency</a></li>
+            <li><a class="nav-item" [routerLink]="['/welcome']">Home</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="edit-form">
+    <h1>Edit Account</h1>
+    <form>
+    <p>First Name: </p>
+    <input type="text" name="firstName" [(ngModel)] = "editUser.firstName"> 
+    <p>Last Name: </p>
+    <input type="text" name="lastName" [(ngModel)] = "editUser.lastName"> 
+    <p>Username: </p>
+    <input type="text" name="username" [(ngModel)] = "editUser.userName"> 
+    <p>Email: </p>
+    <input type="text" name="email" [(ngModel)] = "editUser.email"> 
+    <p>Password: </p>
+    <input type="text" name="password" [(ngModel)] = "editUser.password"> 
+
+     <button type="button" class="btn btn-lg" (click)="edittedUser()"><span></span>Edit Account</button>
+
+    </form>
+    </div>
+</body>
+</html>

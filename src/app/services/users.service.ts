@@ -65,4 +65,15 @@ export class UsersService implements CanActivate {
       return true;
     }
   }
+
+    // getting one user
+    getOneUser(reqID: number): Observable<user>{
+      return this.http.get<user>(`${this.apiServerUrl}/${reqID}`)
+    }
+      // editing a user 
+  updateUser(editID: number, edittedInfo: user): Observable<user>{
+    return this.http.put<user>(`${this.apiServerUrl}/${editID}`, edittedInfo)
+  }
+
 }
+

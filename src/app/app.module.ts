@@ -17,6 +17,7 @@ import { UserPostComponent } from './Components/user/post/post.component';
 import { LoginComponent } from './Components/login/login.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { WelcomeComponent } from './Component/welcome/welcome.component';
+import { AboutComponent } from './Component/about/about.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { WelcomeComponent } from './Component/welcome/welcome.component';
     TherapistListallComponent,
     UserEditComponent,
     WelcomeComponent,
+    AboutComponent,
   
   ],
   imports: [
