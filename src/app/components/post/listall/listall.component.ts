@@ -14,7 +14,7 @@ export class PostListallComponent implements OnInit {
 
   public posts: any;
 
-  public newPost: post = {title: '', content: '', UserName: 'loggedInUser', timestamp: new Date};
+  public newPost: any = {title: '', content: '', userName: 'loggedInUser', timestamp: new Date};
 
   constructor(private http: HttpClient, private usersService: UsersService) { }
 

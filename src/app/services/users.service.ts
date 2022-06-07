@@ -10,6 +10,7 @@ import { post } from '../models/Post/post.model';
   providedIn: 'root'
 })
 // Code for authentication taken from: https://developer.okta.com/blog/2019/05/16/angular-authentication-jwt#add-an-angular-client-with-jwt-authentication
+
 export class UsersService implements CanActivate {
 
   // environment.apiBaseUrlUsers: 'http://localhost:8080'
