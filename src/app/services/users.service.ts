@@ -32,8 +32,8 @@ export class UsersService implements CanActivate {
   }
 
   // for new users to register
-  addUser(newUser: user): Observable<any> {
-    return this.http.post<any>(`${this.apiServerUrl}/api/users/add`, newUser);
+  addUser(newUser: user) {
+    return this.http.post(`https://localhost:7102/api/Users`, newUser);
   } 
   
   // for user to login
@@ -42,7 +42,7 @@ export class UsersService implements CanActivate {
       username,
       password
     }
-    return this.http.post<any>(`${this.apiServerUrl}/login`, loginInfo, { observe: 'response' })
+    return this.http.post<any>(`https://localhost:7102/api/Login`, loginInfo, { observe: 'response' })
   } 
 
   // gets user data from backend to display on user's Home page
