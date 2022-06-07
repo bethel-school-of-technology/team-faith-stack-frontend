@@ -9,6 +9,7 @@ import { TherapistListallComponent } from './Components/therapist/listall/listal
 import { UserEditComponent } from './Components/user/edit/edit.component';
 import { UserPostComponent } from './Components/user/post/post.component';
 import { RegisterComponent } from './Components/register/register.component';
+import { WelcomeComponent } from './Components/welcome/welcome.component';
 
 const routes: Routes = [
   { path: 'register', component: RegisterComponent},
@@ -28,6 +29,8 @@ const routes: Routes = [
   { path: "user/edit", component: UserEditComponent},
 
   { path: "user/post", component: UserPostComponent},
+
+  { path: "welcome", component: WelcomeComponent},
 
   { path: "", redirectTo: "welcome", pathMatch: "full"}
 

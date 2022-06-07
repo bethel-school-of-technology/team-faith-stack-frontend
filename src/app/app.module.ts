@@ -16,6 +16,7 @@ import { UserEditComponent } from './Components/user/edit/edit.component';
 import { UserPostComponent } from './Components/user/post/post.component';
 import { LoginComponent } from './Components/login/login.component';
 import { RegisterComponent } from './Components/register/register.component';
+import { WelcomeComponent } from './Components/welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { RegisterComponent } from './Components/register/register.component';
     UserPostComponent,
     PostEditComponent,
     TherapistListallComponent,
-    UserEditComponent
+    UserEditComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
