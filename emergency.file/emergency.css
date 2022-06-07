@@ -1,13 +1,10 @@
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
     font-family: sans-serif;
-  }
-  
-  body {
-    background-size: cover;
-  }
-  html {
+}
+
+html {
     height: 100%;
     overflow: hidden;
     background: radial-gradient(ellipse at bottom, #1b2735 0%,#090a0f 100%);
@@ -27,70 +24,61 @@
     margin-top: -60px;
     padding-left: 10px;
 }
-  
-  .login-form {
-    width: 350px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    color: #fff;
-    text-align: center;
-  }
-
-.login-form h1 {
-    font-size: 40px;
-    text-align: center;
-    text-transform: uppercase;
-    margin: 40px 0;
-}
-
-.login-form p {
-    font-size: 20px;
-    margin: 15px 0;
-}
-
-.login-form input {
-    font-size: 16px;
+.banner {
     width: 100%;
-    padding: 15px 10px;
-    border: 0;
-    outline: none;
-    border-radius: 5px;
+    height: 100vh;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%,#090a0f 100%);
+    background-size: cover;
+    background-position: center;
 }
-
-.login-form button {
-    width: 200px;
-    padding: 15px 0;
-    text-align: center;
-    margin: 20px 10px;
-    border-radius: 25px;
-    font-weight: bold;
-    border: 2px solid #009688;
-    background: transparent;
-    color: #fff;
-    cursor: pointer;
+.navbar {
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
     position: relative;
-    overflow: hidden;
 }
-span {
+.navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+.navbar ul li::after {
+    content: '';
+    height: 3px;
+    width: 0;
     background: #009688;
-    height: 100%;
-    width: 0%;
-    border-radius: 25px;
     position: absolute;
     left: 0;
-    bottom: 0;
-    z-index: -1;
+    bottom: -10px;
     transition: 0.5s;
 }
-
-.login-form button:hover span {
+.navbar ul li:hover::after{
     width: 100%
 }
-
-.login-form button:hover {
-    border: none;
+.content {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+}
+.content h1{
+    font-size: 70px;
+    margin-top: 80px;
+}
+content p{
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 50px;
 }
 
 
