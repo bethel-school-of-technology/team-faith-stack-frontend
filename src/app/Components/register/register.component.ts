@@ -30,4 +30,5 @@ newUser: user = new user();
         alert(error.message);
       });
   }
+  
 }
