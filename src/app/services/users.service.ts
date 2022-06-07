@@ -33,9 +33,9 @@ export class UsersService implements CanActivate {
   }
 
   // for new users to register
-  addUser(newUser: user): Observable<any> {
-    return this.http.post<any>(`${this.apiServerUrl}/api/Users`, newUser);
-  } 
+  addUser(newUser: user) {
+    return this.http.post(`https://localhost:7102/api/Users`, newUser);
+  }
   
   // for user to login
   loginUser(username: string, password: string): Observable<any> {
