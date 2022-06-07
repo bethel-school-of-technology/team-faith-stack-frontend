@@ -44,9 +44,9 @@ export class PostListallComponent implements OnInit {
 
   }
 
-// get and update a post
-
-
-
-// save updated post
+  deletePost(deletePostId:number){
+    this.usersService.deletePost(deletePostId).subscribe(response =>{
+      this.ngOnInit();
+    })
+  }
 }
