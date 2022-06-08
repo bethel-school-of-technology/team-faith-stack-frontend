@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { JwtModule } from "@auth0/angular-jwt";
 
 import { RouterModule } from '@angular/router';
 import { PostCreateComponent } from './Components/post/create/create.component';
@@ -16,6 +17,10 @@ import { UserEditComponent } from './Components/user/edit/edit.component';
 import { UserPostComponent } from './Components/user/post/post.component';
 import { LoginComponent } from './Components/login/login.component';
 import { RegisterComponent } from './Components/register/register.component';
+
+export function tokenGetter() { 
+  return localStorage.getItem("jwt"); 
+}
 
 @NgModule({
   declarations: [
@@ -35,9 +40,16 @@ import { RegisterComponent } from './Components/register/register.component';
     AppRoutingModule, 
     RouterModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: ["localhost:7102"],
+        disallowedRoutes: []
+      }
+    })
   ],
-  providers: [],
+  providers: [],        //add AuthGuard
   bootstrap: [AppComponent]
 })
 export class AppModule { }
