@@ -45,7 +45,7 @@ export class UsersService implements CanActivate {
       username,
       password
     }
-    return this.http.post<any>(`${this.apiServerUrl}/login`, loginInfo, { observe: 'response' })
+    return this.http.post<any>(`https://localhost:7102/api/Login`, loginInfo, { observe: 'response' })
   } 
 
   // gets user data from backend to display on user's Home page
