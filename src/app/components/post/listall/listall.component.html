@@ -1,1 +1,37 @@
-<p>listall works!</p>
+<div>
+    <h1>BREATH</h1>
+</div>
+
+<div>
+    <nav>
+        <!-- Link to user.profile.html -->
+        <a routerLink="">Profile</a>
+
+        <!-- Link to Therapists List -->
+        <a routerLink="/therapist/listall"> View Therapists</a>
+
+        <!-- Link to Login/register or welcome.html -->
+        <a routerLink="/login">Logout</a>
+    </nav>
+</div>
+<br><br>
+
+
+<!-- Create new post -->
+
+<form>
+    <input id="title" [(ngModel)]="newPost.title" name="title" type="text" placeholder="Post Title">
+    <br>
+    <textarea id="content" [(ngModel)]="newPost.content" placeholder="What's on your mind?" name="content"></textarea>
+    <br>
+    <button type="button" (click)="sendForm()">Post</button>
+</form>
+
+<!-- "let post of posts.reverse()" to reverse listing order, making newest post at top? -->
+<div *ngFor="let post of posts.reverse()">
+    <h3>{{ post.title }}</h3>
+    <i>{{ post.UserName }}</i><br>
+    <p>{{ post.content }} </p>
+    <a [routerLink]="['/', 'post', 'edit', post.postId]" >Edit</a>
+    <button (click) = 'deletePost(post.deletePostId)'>Delete</button>
+</div>

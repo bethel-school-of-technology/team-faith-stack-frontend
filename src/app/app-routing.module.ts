@@ -22,7 +22,7 @@ const routes: Routes = [
 
   { path: "post/delete", component: PostDeleteComponent},
 
-  { path: "post/edit", component: PostEditComponent},
+  { path: "post/edit/:id", component: PostEditComponent},
 
   { path: "post/listall", component: PostListallComponent},
 
