@@ -11,26 +11,21 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class UserPostComponent implements OnInit {
 
-  // getUser: user = new user();
+  currentUser: user = new user();
 
-  public getUser: any = {firstName: '', lastName: '', userName: '', email: ''};
+  //public currentUser: any = {firstName: '', lastName: '', userName: '', email: ''};
   userID: number;
 
   constructor(private http: HttpClient, private route: ActivatedRoute, private usersService: UsersService, private router: Router) { }
 
   ngOnInit(): void {
-    this.loadUser(this.route.snapshot.paramMap.get('id'))
+    this.userID = parseInt(this.route.snapshot.paramMap.get("userId"));
 
     this.usersService.getOneUser(this.userID).subscribe(response => {
-      this.getUser = response;
+      this.currentUser = response;
     })
   }
 
-  loadUser(userID: string) {
-    this.http.get('https://localhost:7102/api/Users' + this.userID).subscribe(response => {
-      console.log(response);
-      this.getUser = response;
-    });
-  }
+
 
 }
