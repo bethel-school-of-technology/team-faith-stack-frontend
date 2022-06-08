@@ -1,26 +1,29 @@
+    <head>
+        <title></title>
+    </head>
 
-<h3>Login: </h3>
-<br>
-
-<div class="container">
-    <form>
-        <div class="form-group">
-            <label for="username">Username:</label>
-             
-                <input type="text" name="username" id="username" placeholder="Username" required
-                [(ngModel)]="loginForm.username" #username="ngModel">
+    <section class="wrapper">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+    </section>
+    <div class="banner">
+        <div class="navbar">
+            <ul>
+                <li><a href="">About</a></li>
+                <li><a href="">Subscribe</a></li>
+                <li><a href="emergency.html">Emergency</a></li>
+            </ul>
         </div>
-        <br>
-        <div class="form-group">
-            <label for="password">Password:</label>
+    <div class="login-form">
+        <h1>Login Here</h1>
+        <form>
+            <p>User Name</p>
+            <input type="text" name="username" id="username" placeholder="Username" required
+                [(ngModel)]="loginForm.username" #username="ngModel">
+            <p>Password</p>
             <input type="password" name="password" class="form-control" id="password" placeholder="Password"
                 [(ngModel)]="loginForm.password" #password="ngModel">
-        </div>
-    </form>
-</div>
-<div class="container">
-    <div class="onLogin">
-        <button type="button" class="btn btn-lg" (click)="onLogin()">Login</button>
-        <a routerLink="/register">Sign-Up!</a>
+            <button type="button" class="btn btn-lg" (click)="onLogin()"><span></span>Login</button>
+        </form>
     </div>
-</div>

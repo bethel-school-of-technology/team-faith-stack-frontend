@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-listall',
   templateUrl: './listall.component.html',
@@ -10,6 +11,7 @@ export class TherapistListallComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

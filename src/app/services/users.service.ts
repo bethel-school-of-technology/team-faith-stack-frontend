@@ -12,6 +12,9 @@ import { post } from '../models/Post/post.model';
 // Code for authentication taken from: https://developer.okta.com/blog/2019/05/16/angular-authentication-jwt#add-an-angular-client-with-jwt-authentication
 
 export class UsersService implements CanActivate {
+  createPost(newPost: any) {
+    throw new Error('Method not implemented.');
+  }
 
   // environment.apiBaseUrlUsers: 'http://localhost:8080'
   apiServerUrl: string = environment.apiBaseUrlUsers;
@@ -34,8 +37,8 @@ export class UsersService implements CanActivate {
   }
 
   // for new users to register
-  addUser(newUser: user) {
-    return this.http.post(`https://localhost:7102/api/Users`, newUser);
+  addUser(newUser: user): Observable<any> {
+    return this.http.post<any>(`${this.apiServerUrl}/api/Users`, newUser);
   } 
   
   // for user to login
@@ -67,6 +70,16 @@ export class UsersService implements CanActivate {
       return true;
     }
   }
+
+    // getting one user
+    getOneUser(reqID: number): Observable<user>{
+      return this.http.get<user>(`${this.apiServerUrl}/${reqID}`)
+    }
+      // editing a user 
+  updateUser(editID: number, edittedInfo: user): Observable<user>{
+    return this.http.put<user>(`${this.apiServerUrl}/${editID}`, edittedInfo)
+  }
+
 
   createPost(newPostData) {
     return this.http.post('https://localhost:7102/api/Posts', newPostData);

@@ -1,52 +1,36 @@
+<head>
+    <title></title>
+</head>
 
-<h3>Register: </h3>
-<br>
- 
-<div class="container">
-    <div class="form-group">
-        <label for="firstName">First Name:</label>
+<section class="wrapper">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+</section>
+<div class="banner">
+    <div class="navbar">
+        <ul>
+            <li><a class="nav-item" [routerLink]="['/about']">About</a></li>
+            <li><a href="">Subscribe</a></li>
+            <li><a href="emergency.html">Emergency</a></li>
+        </ul>
+    </div>
+ <div class="register-form">
+    <h1>Register Here</h1>
+    <form>
+        <p>First Name</p>
          <input type="text" class="form-control" id="firstName" placeholder="First name"
             required [(ngModel)]="newUser.firstName" #firstName="ngModel"> 
-    </div>
- 
-    <br>
-    <div class="form-group">
-        <label for="lastName">Last Name:</label>
+        <p>Last Name:</p>
          <input type="text" class="form-control" id="lastName" placeholder="Last name"
             [(ngModel)]="newUser.lastName" #lastName="ngModel"> 
-    </div>
-    <br>
-    <div class="form-group">
-        <label for="username">Username:</label>
+        <p>User Name</p>
          <input type="text" class="form-control" id="username" placeholder="Username" 
             [(ngModel)]="newUser.userName" #username="ngModel"> 
-    </div>
-    <br>
-    <div class="form-group">
-        <label for="email">email:</label>
-         <input type="text" class="form-control" id="email" placeholder="email" 
-            [(ngModel)]="newUser.email" #email="ngModel"> 
-    </div>
-    <br>
-    <div class="form-group">
-        <label for="password">Password:</label>
+        <p>Password</p>
          <input type="text" class="form-control" id="password" placeholder="Password"
             [(ngModel)] ="newUser.password" #password="ngModel"> 
-    </div>
-    <br>
-</div>
-
-<br><br>
-
-<div class="container">
-    <div class="register">
-<button type="button" class="btn btn-lg" (click)="register()">Create Account</button>
-    </div>
-</div>
-
-<br><br>
-
-<div>
-    Already registered? <a routerLink="/login">Login Here!</a>
+            <button type="button" class="btn btn-lg" (click)="register()"><span></span>Create Account</button>
+    </form>
 </div>
 
