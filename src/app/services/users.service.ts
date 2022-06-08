@@ -17,19 +17,25 @@ export class UsersService implements CanActivate {
 
   isUserLoggedIn: boolean = false;
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router,  private jwtHelper: JwtHelperService) { }
 
   // checks to see if the user is logged in and routes them accordingly
   // based on code by JavaInUse: https://www.youtube.com/watch?v=QQxqHT7yhHc&t=104s
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    if (this.isUserLoggedIn) {
+    const token = localStorage.getItem("jwt");
+      if (token && !this.jwtHelper.isTokenExpired(token)){
+        return true;
+      }
+      this.router.navigate(["login"]);
+      return false;
+    /*if (this.isUserLoggedIn) {
       return true;
     }
     else {
       alert("Please login or create a new account!");
       this.router.navigate(['login']);
       return false;
-    }
+    }*/
   }
 
   //export class AuthGuard implements CanActivate  {
@@ -62,13 +68,13 @@ export class UsersService implements CanActivate {
   // gets user data from backend to display on user's Home page
   getUserInfo(): Observable<any> {
     let myHeaders = {
-      Authorization: "Bearer " + localStorage.getItem("token")
+      Authorization: " " + localStorage.getItem("jwt")
     }
     return this.http.get(`${this.apiServerUrl}/api/users/find/username`, {headers: myHeaders});
   }
 
   isLoggedIn(): boolean {
-    if(!localStorage.getItem("token")) {
+    if(!localStorage.getItem("jwt")) {
       window.alert("You are not logged in");
       this.router.navigate(["login"]);
       return false;
