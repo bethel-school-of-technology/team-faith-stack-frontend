@@ -13,10 +13,10 @@ import { post } from '../models/Post/post.model';
 
 export class UsersService implements CanActivate {
   
-  loadAllPosts() {
+/*   loadAllPosts() {
     throw new Error('Method not implemented.');
   }
-
+ */
 
   // environment.apiBaseUrlUsers: 'http://localhost:8080'
   apiServerUrl: string = environment.apiBaseUrlUsers;
