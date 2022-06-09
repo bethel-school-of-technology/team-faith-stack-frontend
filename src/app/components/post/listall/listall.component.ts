@@ -12,17 +12,14 @@ import {UsersService} from 'src/app/services/users.service';
 })
 export class PostListallComponent implements OnInit {
 
-  ListOfPosts: post = new post; 
-
   public posts: any;
 
   public newPost: any = {title: '', content: '', userName: 'loggedInUser', timestamp: new Date};
-  route: any;
 
   constructor(private http: HttpClient, private usersService: UsersService) { }
 
   ngOnInit(): void {
-      
+
   this.loadAllPosts();
 
   }

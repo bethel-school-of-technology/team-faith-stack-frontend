@@ -20,7 +20,7 @@ const routes: Routes = [
 
   { path: "post/create", component: PostCreateComponent},
 
-  { path: "posts/delete", component: PostDeleteComponent},
+  { path: "post/delete", component: PostDeleteComponent},
 
   { path: "post/edit/:id", component: PostEditComponent},
 
