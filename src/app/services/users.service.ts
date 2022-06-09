@@ -94,9 +94,9 @@ export class UsersService implements CanActivate {
     return this.http.put<post>('https://localhost:7102/api/Posts' + '/' +editPostId, postToEdit);
   }
 
-  deletePost(deletePostId: number) :Observable<any> {
-    return this.http.delete<any>('https://localhost:7102/api/Posts' + '/' +deletePostId);
-  };
+   deletePost(deletePostId: number) :Observable<any> {
+    return this.http.delete<any>('https://localhost:7102/api/Posts/delete' + '/' +deletePostId);
+   }
+   
   
 }
-
