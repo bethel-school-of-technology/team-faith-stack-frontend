@@ -13,13 +13,18 @@ export class UserPostComponent implements OnInit {
 
   currentUser: user = new user();
 
-  //public currentUser: any = {firstName: '', lastName: '', userName: '', email: ''};
+  // listOfUsers: user = [];
+  
+  // public currentUser: any = {firstName: '', lastName: '', userName: '', email: ''};
+  
+
   userID: number;
 
   constructor(private http: HttpClient, private route: ActivatedRoute, private usersService: UsersService, private router: Router) { }
 
   ngOnInit(): void {
-    this.userID = parseInt(this.route.snapshot.paramMap.get("userId"));
+   
+  this.userID = parseInt(this.route.snapshot.paramMap.get("userId"));
 
     this.usersService.getOneUser(this.userID).subscribe(response => {
       this.currentUser = response;

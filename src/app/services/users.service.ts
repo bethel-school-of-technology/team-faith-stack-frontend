@@ -12,9 +12,10 @@ import { post } from '../models/Post/post.model';
 // Code for authentication taken from: https://developer.okta.com/blog/2019/05/16/angular-authentication-jwt#add-an-angular-client-with-jwt-authentication
 
 export class UsersService implements CanActivate {
-  createPost(newPost: any) {
+  loadAllPosts() {
     throw new Error('Method not implemented.');
   }
+
 
   // environment.apiBaseUrlUsers: 'http://localhost:8080'
   apiServerUrl: string = environment.apiBaseUrlUsers;
@@ -89,9 +90,9 @@ export class UsersService implements CanActivate {
     return this.http.put<post>('https://localhost:7102/api/Posts' + '/' +editPostId, postToEdit);
   }
 
-  deletePost(deletePostId: number) :Observable<any> {
-    return this.http.delete<any>('https://localhost:7102/api/Posts' + '/' +deletePostId);
-  };
+   deletePost(deletePostId: number) :Observable<any> {
+    return this.http.delete<any>('https://localhost:7102/api/Posts/delete' + '/' +deletePostId);
+   }
+   
   
 }
-
