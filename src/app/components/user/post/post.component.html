@@ -11,7 +11,7 @@
         <div class="navbar">
             <ul>
                 <li><a class="nav-item" [routerLink]="['/about']">About</a></li>
-                <li><a href="">Subscribe</a></li>
+                <li><a class="nav-item" [routerLink]="['']">LOGOUT</a></li>
                 <li><a href="https://www.betterhelp.com/gethelpnow/">Emergency</a></li>
             </ul>
         </div>
@@ -21,7 +21,7 @@
             <div>
                 <button class="nav-item" [routerLink]="['/therapist/listall']"><span></span>FIND HELP</button>
                 <button class="nav-item" [routerLink]="['/post/listall']"><span></span>POST</button>
-                <button class="nav-item" [routerLink]="['']"><span></span>LOGOUT</button>
+                <button class="nav-item" [routerLink]="['/user/edit']"><span></span>EDIT USER ACCOUNT</button>
             </div>
         </div>
     </div>
