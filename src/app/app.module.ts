@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { JwtModule } from "@auth0/angular-jwt";
 
 import { RouterModule } from '@angular/router';
 import { PostCreateComponent } from './Components/post/create/create.component';
@@ -18,7 +19,11 @@ import { LoginComponent } from './Components/login/login.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { WelcomeComponent } from './Component/welcome/welcome.component';
 import { AboutComponent } from './Component/about/about.component';
+import { UsersService } from './services/users.service';
 
+export function tokenGetter() { 
+  return localStorage.getItem("jwt"); 
+}
 
 @NgModule({
   declarations: [
@@ -41,9 +46,16 @@ import { AboutComponent } from './Component/about/about.component';
     AppRoutingModule, 
     RouterModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: ["localhost:7102"],
+        disallowedRoutes: []
+      }
+    })
   ],
-  providers: [],
+  providers: [UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
