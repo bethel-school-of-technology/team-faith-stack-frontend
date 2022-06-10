@@ -49,5 +49,5 @@
     <i>{{ post.UserName }}</i><br>
     <p>{{ post.content }} </p>
     <a [routerLink]="['/', 'post', 'edit', post.postId]" >Edit</a>
-    <button (click) = 'deletePost(post.deletePostId)'>Delete</button>
+    <button (click) = 'deletePost(post.postId)'>Delete</button>
 </div> 
