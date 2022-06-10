@@ -14,7 +14,6 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 
 export class UsersService implements CanActivate {
   
-
   // environment.apiBaseUrlUsers: 'http://localhost:8080'
   apiServerUrl: string = environment.apiBaseUrlUsers;
 

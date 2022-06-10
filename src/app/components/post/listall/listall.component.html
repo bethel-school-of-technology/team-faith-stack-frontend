@@ -1,37 +1,53 @@
-<div>
-    <h1>BREATH</h1>
-</div>
+<head>
+    <title></title>
+</head>
 
-<div>
-    <nav>
-        <!-- Link to user.profile.html -->
-        <a routerLink="">Profile</a>
+<section class="wrapper">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+</section>
 
-        <!-- Link to Therapists List -->
-        <a routerLink="/therapist/listall"> View Therapists</a>
+<div class="banner">
+    <div class="navbar">
+        <ul>
+            <li><a class="nav-item" [routerLink]="['/welcome']">Home</a></li>
+            <li><a class="nav-item" [routerLink]="['/about']">About</a></li>
+            <li><a href="emergency.html">Emergency</a></li>
+        </ul>
+    </div>
 
-        <!-- Link to Login/register or welcome.html -->
-        <a routerLink="/login">Logout</a>
-    </nav>
-</div>
-<br><br>
+<div class="content">
+    <h1>POST</h1>
+    <div>
+        <input id="title" [(ngModel)]="newPost.title" name="title" type="text" placeholder="Post Title">
+        <textarea id="content" [(ngModel)]="newPost.content" placeholder="What's on your mind?" name="content"></textarea>
+        <div *ngFor="let post of posts">
+            <p>{{ post.title }}</p>
+            <i>{{ post.UserName }}</i><br>
+            <p>{{ post.content }} </p>
+            <a [routerLink]="['/', 'post', 'edit', post.postId]" >Edit</a>
+        </div>
+    </div>
+    <button class="button" (click)="sendForm()"><span></span>POST</button>
+    <!-- <button (click) = 'deletePost(post.deletePostId)'><span></span></button> -->
 
 
 <!-- Create new post -->
 
-<form>
-    <input id="title" [(ngModel)]="newPost.title" name="title" type="text" placeholder="Post Title">
-    <br>
-    <textarea id="content" [(ngModel)]="newPost.content" placeholder="What's on your mind?" name="content"></textarea>
+<!-- <form>
+  <!--   <input id="title" [(ngModel)]="newPost.title" name="title" type="text" placeholder="Post Title">
+    <br> -->
+  <!--   <textarea id="content" [(ngModel)]="newPost.content" placeholder="What's on your mind?" name="content"></textarea>
     <br>
     <button type="button" (click)="sendForm()">Post</button>
-</form>
+</form> --> 
 
 <!-- "let post of posts.reverse()" to reverse listing order, making newest post at top? -->
-<div *ngFor="let post of posts">
+<!-- <div *ngFor="let post of posts">
     <h3>{{ post.title }}</h3>
     <i>{{ post.UserName }}</i><br>
     <p>{{ post.content }} </p>
     <a [routerLink]="['/', 'post', 'edit', post.postId]" >Edit</a>
     <button (click) = 'deletePost(post.deletePostId)'>Delete</button>
-</div>
+</div> -->
