@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { user } from 'src/app/models/user/user.model';
@@ -24,13 +24,20 @@ export class UserPostComponent implements OnInit {
 
   ngOnInit(): void {
    
-  this.userID = parseInt(this.route.snapshot.paramMap.get("userId"));
+  //this.userID = parseInt(this.route.snapshot.paramMap.get("userId"));
 
-    this.usersService.getOneUser(this.userID).subscribe(response => {
+    this.usersService.getUserInfo().subscribe(response => {
       this.currentUser = response;
-    })
+    }),
+    (error: HttpErrorResponse) => {
+      alert(error.message);
+    }
+ // }
+    
+
   }
-
-
-
-}
+  onLogout() {
+    localStorage.clear();
+    this.usersService.isUserLoggedIn = false;
+    console.log("Logged out, isUserLoggedIn: " + this.usersService.isUserLoggedIn);
+}}
