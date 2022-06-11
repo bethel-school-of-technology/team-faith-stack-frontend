@@ -20,16 +20,16 @@
     <form>
         <p>First Name</p>
          <input type="text" class="form-control" id="firstName" placeholder="First name"
-            required [(ngModel)]="newUser.firstName" #firstName="ngModel"> 
+            [(ngModel)]="newUser.firstName" #firstName="ngModel" name="first"> 
         <p>Last Name:</p>
          <input type="text" class="form-control" id="lastName" placeholder="Last name"
-            [(ngModel)]="newUser.lastName" #lastName="ngModel"> 
+            [(ngModel)]="newUser.lastName" #lastName="ngModel" name="last"> 
         <p>User Name</p>
          <input type="text" class="form-control" id="username" placeholder="Username" 
-            [(ngModel)]="newUser.userName" #username="ngModel"> 
+            [(ngModel)]="newUser.userName" #username="ngModel" name="user"> 
         <p>Password</p>
          <input type="text" class="form-control" id="password" placeholder="Password"
-            [(ngModel)] ="newUser.password" #password="ngModel"> 
+            [(ngModel)] ="newUser.password" #password="ngModel" name="pass"> 
             <button type="button" class="btn btn-lg" (click)="register()"><span></span>Create Account</button>
     </form>
 </div>
