@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './Components/login/login.component';
-import { PostCreateComponent } from './Components/post/create/create.component';
-import { PostDeleteComponent } from './Components/post/delete/delete.component';
 import { PostEditComponent } from './Components/post/edit/edit.component';
 import { PostListallComponent } from './Components/post/listall/listall.component';
 import { TherapistListallComponent } from './Components/therapist/listall/listall.component';
@@ -17,10 +15,6 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent},
   
   { path: 'login', component: LoginComponent},
-
-  { path: "post/create", component: PostCreateComponent},
-
-  { path: "posts/delete", component: PostDeleteComponent},
 
   { path: "post/edit/:id", component: PostEditComponent},
 

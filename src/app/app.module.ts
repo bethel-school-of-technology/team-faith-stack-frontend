@@ -8,8 +8,6 @@ import { FormsModule } from '@angular/forms';
 import { JwtModule } from "@auth0/angular-jwt";
 
 import { RouterModule } from '@angular/router';
-import { PostCreateComponent } from './Components/post/create/create.component';
-import { PostDeleteComponent } from './Components/post/delete/delete.component';
 import { PostEditComponent } from './Components/post/edit/edit.component';
 import { PostListallComponent } from './Components/post/listall/listall.component';
 import { TherapistListallComponent } from './Components/therapist/listall/listall.component';
@@ -30,9 +28,7 @@ export function tokenGetter() {
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    PostDeleteComponent,
     PostListallComponent,
-    PostCreateComponent,
     UserPostComponent,
     PostEditComponent,
     TherapistListallComponent,
