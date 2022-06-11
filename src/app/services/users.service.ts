@@ -55,11 +55,11 @@ export class UsersService implements CanActivate {
   } 
 
   // gets user data from backend to display on user's Home page
-  getUserInfo(): Observable<any> {
+  getUserInfo(userId: string|number): Observable<any> {
     let myHeaders = {
       Authorization: "Bearer " + localStorage.getItem("jwt")
     }
-    return this.http.get(`${this.apiServerUrl}/api/users/find/username`, {headers: myHeaders});
+    return this.http.get(`${this.apiServerUrl}/api/Users/${userId}`, {headers: myHeaders});
   }
 
   isLoggedIn(): boolean {
