@@ -18,13 +18,13 @@ import { UsersService } from 'src/app/services/users.service';
     token: string = '';
     error: string = '';
   
-    constructor(private UsersService: UsersService, private router: Router, private http: HttpClient) { }
+    constructor(private usersService: UsersService, private router: Router, private http: HttpClient) { }
   
     ngOnInit(): void { }
   
   onLogin() {
     console.log(this.loginForm.username + "logged in successfully!");
-    this.UsersService.loginUser(this.loginForm.username, this.loginForm.password)
+    this.usersService.loginUser(this.loginForm.username, this.loginForm.password)
     .subscribe({
       next: res => {
         const token = res.token;
