@@ -813,6 +813,8 @@ button:hover {
         text-align: center;
     }
 
+/* will not scale */
+
     .post-list {
         width: auto;
         left: 50%;
