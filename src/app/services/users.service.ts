@@ -28,6 +28,7 @@ export class UsersService implements CanActivate {
       if (token && !this.jwtHelper.isTokenExpired(token)){
         return true;
       }
+      alert("Please login or create a new account!");
       this.router.navigate(["login"]);
       return false;
     /*if (this.isUserLoggedIn) {
@@ -57,7 +58,7 @@ export class UsersService implements CanActivate {
   // gets user data from backend to display on user's Home page
   getUserInfo(userId: string|number): Observable<any> {
     let myHeaders = {
-      Authorization: "Bearer " + localStorage.getItem("jwt")
+      Authorization: "" + localStorage.getItem("jwt")
     }
     return this.http.get(`${this.apiServerUrl}/api/Users/${userId}`, {headers: myHeaders});
   }
