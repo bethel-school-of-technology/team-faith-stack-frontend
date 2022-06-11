@@ -12,10 +12,7 @@
             <ul>
                 <li><a class="nav-item" [routerLink]="['/welcome']">Home</a></li>
                 <li><a class="nav-item" [routerLink]="['/about']">About</a></li>
-<<<<<<< HEAD
-=======
-                <li><a class="nav-item" [routerLink]="['']">LOGOUT</a></li>
->>>>>>> 06f68b00b8fd4831b3438454f3471228853e4bd7
+                <li><a class="nav-item" [routerLink]="['']" (click)="onLogout()">LOGOUT</a></li>
                 <li><a href="https://www.betterhelp.com/gethelpnow/">Emergency</a></li>
             </ul>
         </div>
@@ -24,13 +21,8 @@
             <h1>H E L L O  {{currentUser.firstName}} </h1> 
             <div>
                 <button class="nav-item" [routerLink]="['/therapist/listall']"><span></span>FIND HELP</button>
-                <button class="nav-item" [routerLink]="['/post/listall']"><span></span>POST</button>
-<<<<<<< HEAD
-                <button class="nav-item" [routerLink]="['/user/edit']"><span></span>EDIT PROFILE</button>
-                <button class="nav-item" [routerLink]="['']"><span></span>LOGOUT</button>
-=======
+                <button class="nav-item" [routerLink]="['/post/listall']"><span></span>FORUM</button>
                 <button class="nav-item" [routerLink]="['/user/edit']"><span></span>EDIT USER ACCOUNT</button>
->>>>>>> 06f68b00b8fd4831b3438454f3471228853e4bd7
             </div>
         </div>
     </div>
