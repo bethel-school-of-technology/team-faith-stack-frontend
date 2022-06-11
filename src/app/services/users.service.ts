@@ -14,7 +14,6 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 
 export class UsersService implements CanActivate {
   
-
   // environment.apiBaseUrlUsers: 'http://localhost:8080'
   apiServerUrl: string = environment.apiBaseUrlUsers;
 
@@ -95,7 +94,7 @@ export class UsersService implements CanActivate {
   }
 
    deletePost(deletePostId: number) :Observable<any> {
-    return this.http.delete<any>('https://localhost:7102/api/Posts/delete' + '/' +deletePostId);
+    return this.http.delete<any>('https://localhost:7102/api/Posts/' + deletePostId);
    }
    
   
