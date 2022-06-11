@@ -1,3 +1,27 @@
+/* mobile */
+@media only screen and (max-width: 600px) {
+    .content.h1{
+        font-size: 60px;
+        margin-bottom: 10px;
+    }
+}
+
+/* tablet */
+@media only screen and (max-width: 768px) {
+
+}
+
+/* laptop */
+@media only screen and (max-width: 992px) {
+
+}
+
+/* desktop */
+@media only screen and (max-width: 1200px) {
+
+}
+
+
 * {
     margin: 0;
     padding: 0;
