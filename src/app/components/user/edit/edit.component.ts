@@ -13,7 +13,7 @@ import { HttpClient } from '@angular/common/http';
 export class UserEditComponent implements OnInit {
 
  // editUser: user = new user();
-
+ 
   public editUser: any = {firstName: '', lastName: '', userName: '', email: '', password: ''};
 
   userID: number; 
@@ -32,14 +32,23 @@ export class UserEditComponent implements OnInit {
   }
 
   loadUser(userID: string) {
-    this.http.get('https://localhost:7102/api/Users' + this.userID).subscribe(response => {
+    this.http.get('https://localhost:7102/api/Users/' + this.userID).subscribe(response => {
       console.log(response);
       this.editUser = response;
     });
   }
 
   edittedUser(){
-    this.usersService.updateUser(this.userID, this.editUser)
+    //tried this code
+    /*localStorage.getItem('userId')
+    this.usersService.updateUser(localStorage.getItem('userId', token)).subscribe(response => {
+      console.log(response);
+      this.currentUser = response;
+    }),
+    (error: HttpErrorResponse) => {
+      alert(error.message);
+    }*/
+    this.usersService.updateUser(this.editUser.userID, this.editUser)
     .subscribe(
       response => {
       this.router.navigate(["./post"])
