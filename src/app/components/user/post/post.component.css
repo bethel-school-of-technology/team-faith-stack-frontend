@@ -757,7 +757,12 @@ button:hover {
 
   /* mobile */
 @media only screen and (max-width: 600px) {
-
+    .navbar ul li {
+      list-style: none;
+      display: inline-block;
+      margin: 0 10px;
+      position: relative;
+    }
 }
 
 /* tablet */

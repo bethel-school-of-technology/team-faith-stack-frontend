@@ -698,6 +698,10 @@ span {
 
 /* mobile */
 @media only screen and (max-width: 600px) {
+  .navbar {
+    display: flex;
+    align-items: center;
+  }
 
 }
 
