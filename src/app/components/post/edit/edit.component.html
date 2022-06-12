@@ -14,32 +14,21 @@
 <div class="banner">
     <div class="navbar">
         <ul>
-            <li><a class="nav-item" [routerLink]="['/welcome']">Home</a></li>
-            <li><a class="nav-item" [routerLink]="['/about']">About</a></li>
-            <li><a href="emergency.html">Emergency</a></li>
+            <li><a class="nav-item" [routerLink]="['/User/post']">Profile</a></li>
+            <li><a class="nav-item" [routerLink]="['/therapist/listall']">View Therapists</a></li>
+            <li><a class="nav-item" [routerLink]="['']" (click)="onLogout()">LOGOUT</a></li>
         </ul>
     </div>
 
-<div>
-    <nav>
-        <!-- Link to user.profile.html -->
-        <a routerLink="">Profile</a>
-
-        <!-- Link to Therapists List -->
-        <a routerLink="/therapist/listall"> View Therapists</a>
-
-        <!-- Link to Login/register or welcome.html -->
-        <a routerLink="/login">Logout</a>
-    </nav>
+    <!-- Edit post -->
+    <div>
+        <h2>Edit your post:</h2>
+        <form class="editPost-form">
+            <input id="postTitle" [(ngModel)]="editPost.title" name="title" type="text" placeholder="Post Title">
+            <br>
+            <textarea id="postContent" [(ngModel)]="editPost.content" placeholder="What's on your mind?" name="content"></textarea>
+            <br>
+            <button type="button" (click)="sendForm()"><span></span>Post</button>
+        </form>
+    </div>
 </div>
-
-<br><br>
-
-<!-- Edit post -->
-<form>
-    <input id="title" [(ngModel)]="editPost.title" name="title" type="text" placeholder="Post Title">
-    <br>
-    <textarea id="content" [(ngModel)]="editPost.content" placeholder="What's on your mind?" name="content"></textarea>
-    <br>
-    <button type="button" (click)="sendForm()">Post</button>
-</form>

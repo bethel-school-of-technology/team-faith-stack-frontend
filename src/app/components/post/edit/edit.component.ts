@@ -35,4 +35,10 @@ export class PostEditComponent implements OnInit {
     });
   }
 
+  onLogout() {
+    localStorage.clear();
+    this.usersService.isUserLoggedIn = false;
+    console.log("Logged out, isUserLoggedIn: " + this.usersService.isUserLoggedIn);
+    }
+
 }
