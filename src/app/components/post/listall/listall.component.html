@@ -19,7 +19,7 @@
         <ul>
             <li><a class="nav-item" [routerLink]="['/user/post']">Profile</a></li>
             <li><a class="nav-item" [routerLink]="['/therapist/listall']">View Therapists</a></li>
-            <li><a class="nav-item" [routerLink]="['/login']">Logout</a></li>
+            <li><a class="nav-item" [routerLink]="['']" (click)="onLogout()">LOGOUT</a></li>
         </ul>
     </div>
     
