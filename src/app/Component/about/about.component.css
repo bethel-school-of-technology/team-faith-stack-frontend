@@ -653,14 +653,14 @@ content p{
 
 /* mobile */
 @media only screen and (max-width: 600px) {
-    .content.h1{
-        font-size: 60px;
-        margin-bottom: 10px;
+    .content h1{
+        font-size: 50px;
     }
 }
 
 /* tablet */
 @media only screen and (max-width: 768px) {
+
 
 }
 
