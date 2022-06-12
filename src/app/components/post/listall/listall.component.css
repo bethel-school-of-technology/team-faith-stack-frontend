@@ -10,7 +10,6 @@ html {
     background: radial-gradient(ellipse at bottom, #1b2735 0%,#090a0f 100%);
 }
 
-
 #title {
     position: absolute;
     top: 50%;
@@ -26,7 +25,6 @@ html {
     padding-left: 10px;
 }
 
-
 .banner {
     width: 100%;
     height: 100vh;
@@ -34,7 +32,6 @@ html {
     background-size: cover;
     background-position: center;
 }
-
 
 .navbar {
     width: 85%;
@@ -66,32 +63,10 @@ html {
     transition: 0.5s;
 }
 .navbar ul li:hover::after{
-    width: 100%
+    width: 100%;
 }
 
 .banner h1{
-    text-align: center;
-}
-
-/* .post-form{
-    width: 50%;
-    float: left;
-} */
-
-/* .post-list {
-    width: 50%;
-    float: left;
-} */
-
-
-.post-form {
-    float: left;
-    width: auto;
-    margin-top: 200px;
-    left: 25%;
-    transform: translate(-50%, -50%);
-    position: relative;
-    color: #fff;
     text-align: center;
 }
 
@@ -102,15 +77,23 @@ h1 {
     text-transform: uppercase;
 }
 
+.post-form {
+    left: 10%;
+    color: #fff;
+    text-align: center;
+}
+
 .post-form h2 {
+    color: #fff;
     font-size: 20px;
     text-align: center;
     margin: 40px 0px 15px 0px;
-  }
+    text-transform: uppercase;
+}
 
 .post-form input {
     font-size: 16px;
-    width: 100%;
+    width: 50%;
     padding: 15px 10px;
     border: 0;
     outline: none;
@@ -119,71 +102,28 @@ h1 {
 
 .post-form textarea {
     font-size: 16px;
-    width: 100%;
+    width: 50%;
     padding: 15px 10px;
     border: 0;
     outline: none;
     border-radius: 5px;
 }
 
-.post-form button {
-    width: 200px;
-    padding: 15px 0;
-    text-align: center;
-    margin: 20px 10px;
-    border-radius: 25px;
-    font-weight: bold;
-    border: 2px solid #009688;
-    background: transparent;
-    color: #fff;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-  }
 
 .post-list {
-    float: left;
-    width: auto;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: relative;
     color: #fff;
-    text-align: center;
+    width: 50%;
+    
 }
 
+
 .post-list h2 {
+    color: #fff;
     font-size: 20px;
     text-align: center;
     margin: 40px 0px 15px 0px;
-}
-
-.content {
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    text-align: center;
-    color: #fff;
-}
-.content h1{
-    font-size: 70px;
-    margin-top: 80px;
-}
-
-.post-loop{
-    width: 200px;
-    padding: 15px 0;
-    justify-content: left;
-    margin: 20px 10px;
-    border-radius: 25px;
-    border: 2px solid #009688;
-    background: transparent;
-    color: #fff;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-
-}
+    text-transform: uppercase;
+}  
 
 button{
     width: 200px;
@@ -193,30 +133,14 @@ button{
     border-radius: 25px;
     font-weight: bold;
     border: 2px solid #009688;
-    background: transparent;
+    background: #009688;
     color: #fff;
     cursor: pointer;
     position: relative;
     overflow: hidden;
 
 }
-
-.post-options {
-    width: 200px;
-    padding: 15px 0;
-    text-align: center;
-    margin: 20px 10px;
-    border-radius: 25px;
-    font-weight: bold;
-    border: 2px solid #009688;
-    background: transparent;
-    color: #fff;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-}
-
-span{
+/* span{
     background: #009688;
     height: 100%;
     width: 0;
@@ -232,6 +156,22 @@ button:hover span{
 }
 button:hover {
     border: none;
+} */
+
+
+.column1{
+    float: left;
+    width: 50%;
+}
+.column2{
+    float: right;
+    width: 50%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 #stars {
@@ -800,43 +740,12 @@ button:hover {
     }
 }
 
-/* mobile */
-@media only screen and (max-width: 700px) {
-
-    .post-form {
-        width: auto;
-        margin-top: 200px;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        position: relative;
-        color: #fff;
-        text-align: center;
+@media screen and (max-width: 600px) {
+    .column1 {
+        width: 100%;
     }
-
-/* will not scale */
-
-    .post-list {
-        width: auto;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        position: relative;
-        color: #fff;
-        text-align: center;
+    .column2 {
+        width: 100%;
     }
-
-}
-
-/* tablet */
-@media only screen and (max-width: 768px) {
-
-}
-
-/* laptop */
-@media only screen and (max-width: 992px) {
-
-}
-
-/* desktop */
-@media only screen and (max-width: 1200px) {
 
 }

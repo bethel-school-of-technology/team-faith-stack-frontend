@@ -1,12 +1,11 @@
 <!-- POST/LISTALL -->
 <!-- FORUM -->
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 
 <head>
     <title></title>
 </head>
-
 
 <section class="wrapper">
     <div id="stars"></div>
@@ -21,14 +20,37 @@
             <li><a class="nav-item" [routerLink]="['/therapist/listall']">View Therapists</a></li>
             <li><a class="nav-item" [routerLink]="['']" (click)="onLogout()">LOGOUT</a></li>
         </ul>
-    </div>
-    
+    </div>   
 
     <h1>Forum</h1>
 
+    <div class='row'>
+        <div class="column1 post-form">
+            <h2>New Posts</h2>
+            <form>
+                <input id="postTitle" [(ngModel)]="newPost.title" name="title" type="text" placeholder="Post Title">
+                <br>
+                <textarea id="postContent" [(ngModel)]="newPost.content" placeholder="What's on your mind?" name="content"></textarea>
+                <br>
+                <button type="button" (click)="sendForm()"><span></span>Post</button>
+            </form>
+        </div>
 
-    <div class="forum">
-        <!-- Create new post -->
+        <div class="column2 post-list">
+            <h2>Latest Posts</h2>
+            <div class="post-loop" *ngFor="let post of posts">
+                <h3>{{ post.title }}</h3>
+                <i>{{ post.UserName }}</i><br>
+                <p>{{ post.content }} </p>
+                <button class="post-edit post-options" [routerLink]="['/', 'post', 'edit', post.postId]"><span></span>Edit</button>
+                <button class="post-delete post-options" (click)= 'deletePost(post.postId)'><span></span>Delete</button>
+            </div>
+        </div>
+    </div>
+</div>    
+
+    <!-- <div class="forum">
+
         <div class="post-form">
             <h2>New Post</h2>
             <form>
@@ -40,8 +62,6 @@
             </form>
         </div>
 
-
-        <!-- "let post of posts.reverse()" to reverse listing order, making newest post at top?  -->
         <div class="post-list">
             <h2>Latest Posts</h2>
 
@@ -49,9 +69,8 @@
                 <h3>{{ post.title }}</h3>
                 <i>{{ post.UserName }}</i><br>
                 <p>{{ post.content }} </p>
-                <a class="post-edit post-options" [routerLink]="['/', 'post', 'edit', post.postId]" >Edit</a>
+                <button class="post-edit post-options" [routerLink]="['/', 'post', 'edit', post.postId]" >Edit</button>
                 <button class="post-delete post-options" (click) = 'deletePost(post.postId)'>Delete</button>
             </div> 
         </div>
-    </div>
-</div>
+    </div> -->
