@@ -696,3 +696,23 @@ span {
         transform: translateY(-2000px);
     }
   }
+
+  /* mobile */
+@media only screen and (max-width: 600px) {
+
+}
+
+/* tablet */
+@media only screen and (max-width: 768px) {
+
+}
+
+/* laptop */
+@media only screen and (max-width: 992px) {
+
+}
+
+/* desktop */
+@media only screen and (max-width: 1200px) {
+
+}

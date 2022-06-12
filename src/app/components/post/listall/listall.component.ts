@@ -51,5 +51,13 @@ export class PostListallComponent implements OnInit {
     this.usersService.deletePost(deletePostId).subscribe(response =>{
       this.ngOnInit();
     })
+
   }
+    
+  onLogout() {
+    localStorage.clear();
+    this.usersService.isUserLoggedIn = false;
+    console.log("Logged out, isUserLoggedIn: " + this.usersService.isUserLoggedIn);
+    }
 }
+

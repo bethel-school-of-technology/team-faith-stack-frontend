@@ -682,3 +682,26 @@ button:hover {
         transform: translateY(-2000px);
     }
 }
+
+/* mobile */
+@media only screen and (max-width: 600px) {
+
+    h1 {
+        font-size: 60px;
+    }
+}
+
+/* tablet */
+@media only screen and (max-width: 768px) {
+
+}
+
+/* laptop */
+@media only screen and (max-width: 992px) {
+
+}
+
+/* desktop */
+@media only screen and (max-width: 1200px) {
+
+}

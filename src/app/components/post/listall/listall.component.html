@@ -1,6 +1,12 @@
+<!-- POST/LISTALL -->
+<!-- FORUM -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <head>
     <title></title>
 </head>
+
 
 <section class="wrapper">
     <div id="stars"></div>
@@ -11,43 +17,41 @@
 <div class="banner">
     <div class="navbar">
         <ul>
-            <li><a class="nav-item" [routerLink]="['/welcome']">Home</a></li>
-            <li><a class="nav-item" [routerLink]="['/about']">About</a></li>
-            <li><a href="emergency.html">Emergency</a></li>
+            <li><a class="nav-item" [routerLink]="['/user/post']">Profile</a></li>
+            <li><a class="nav-item" [routerLink]="['/therapist/listall']">View Therapists</a></li>
+            <li><a class="nav-item" [routerLink]="['']" (click)="onLogout()">LOGOUT</a></li>
         </ul>
     </div>
+    
 
-<!-- <div class="content">
-    <h1>POST</h1>
-    <div>
-        <input id="title" [(ngModel)]="newPost.title" name="title" type="text" placeholder="Post Title">
-        <textarea id="content" [(ngModel)]="newPost.content" placeholder="What's on your mind?" name="content"></textarea>
-        <div *ngFor="let post of posts">
-            <p>{{ post.title }}</p>
-            <i>{{ post.UserName }}</i><br>
-            <p>{{ post.content }} </p>
-            <a [routerLink]="['/', 'post', 'edit', post.postId]" >Edit</a>
+    <h1>Forum</h1>
+
+
+    <div class="forum">
+        <!-- Create new post -->
+        <div class="post-form">
+            <h2>New Post</h2>
+            <form>
+                <input id="postTitle" [(ngModel)]="newPost.title" name="title" type="text" placeholder="Post Title">
+                <br>
+                <textarea id="postContent" [(ngModel)]="newPost.content" placeholder="What's on your mind?" name="content"></textarea>
+                <br>
+                <button type="button" (click)="sendForm()">Post</button>
+            </form>
+        </div>
+
+
+        <!-- "let post of posts.reverse()" to reverse listing order, making newest post at top?  -->
+        <div class="post-list">
+            <h2>Latest Posts</h2>
+
+            <div class="post-loop" *ngFor="let post of posts">
+                <h3>{{ post.title }}</h3>
+                <i>{{ post.UserName }}</i><br>
+                <p>{{ post.content }} </p>
+                <a class="post-edit post-options" [routerLink]="['/', 'post', 'edit', post.postId]" >Edit</a>
+                <button class="post-delete post-options" (click) = 'deletePost(post.postId)'>Delete</button>
+            </div> 
         </div>
     </div>
-    <button class="button" (click)="sendForm()"><span></span>POST</button> -->
-    <!-- <button (click) = 'deletePost(post.deletePostId)'><span></span></button> -->
-
-
-<!-- Create new post -->
-
-<form>
-  <input id="title" [(ngModel)]="newPost.title" name="title" type="text" placeholder="Post Title">
-    <br>
-  <textarea id="content" [(ngModel)]="newPost.content" placeholder="What's on your mind?" name="content"></textarea>
-    <br>
-    <button type="button" (click)="sendForm()">Post</button>
-</form> 
-
- <!-- "let post of posts.reverse()" to reverse listing order, making newest post at top?  -->
- <div *ngFor="let post of posts">
-    <h3>{{ post.title }}</h3>
-    <i>{{ post.UserName }}</i><br>
-    <p>{{ post.content }} </p>
-    <a [routerLink]="['/', 'post', 'edit', post.postId]" >Edit</a>
-    <button (click) = 'deletePost(post.postId)'>Delete</button>
-</div> 
+</div>

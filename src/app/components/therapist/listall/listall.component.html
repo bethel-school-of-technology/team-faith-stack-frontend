@@ -1,3 +1,5 @@
+<!-- THERAPIST/LISTALL -->
+<!-- VIEW THERAPISTS -->
 
 <head>
     <title></title>
@@ -12,8 +14,12 @@
     <div class="banner">
         <div class="navbar">
             <ul>
+
+                <li><a class="nav-item" [routerLink]="['/user/post']">Profile</a></li>
+                <li><a class="nav-item" [routerLink]="['/post/listall']">Forum</a></li>
+                <!-- logout link here -->
                 <li><a class="nav-item" [routerLink]="['/about']">About</a></li>
-                <li><a class="nav-item" [routerLink]="['/user/post']">User profile</a></li>
+
                 <li><a href="https://www.betterhelp.com/gethelpnow/">Emergency</a></li>
             </ul>
         </div>
