@@ -13,6 +13,15 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 // Code for authentication taken from: https://developer.okta.com/blog/2019/05/16/angular-authentication-jwt#add-an-angular-client-with-jwt-authentication
 
 export class UsersService implements CanActivate {
+
+  myHeaders: any = {
+    Authorization: "Bearer " + localStorage.getItem("jwt")
+  }
+   
+  // get user by id
+   getUserById(userId: number): Observable<user> {
+    return this.http.get<user>(`${this.apiServerUrl}/api/Users/${userId}`, {headers: this.myHeaders});
+  }
   
   // environment.apiBaseUrlUsers: 'http://localhost:8080'
   apiServerUrl: string = environment.apiBaseUrlUsers;
@@ -21,86 +30,87 @@ export class UsersService implements CanActivate {
 
   constructor(private http: HttpClient, private router: Router, private jwtHelper: JwtHelperService ) { }
 
-  // checks to see if the user is logged in and routes them accordingly
-  // based on code by JavaInUse: https://www.youtube.com/watch?v=QQxqHT7yhHc&t=104s
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    const token = localStorage.getItem("jwt");
-      if (token && !this.jwtHelper.isTokenExpired(token)){
+    // checks to see if the user is logged in and routes them accordingly
+    // based on code by JavaInUse: https://www.youtube.com/watch?v=QQxqHT7yhHc&t=104s
+    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+      const token = localStorage.getItem("jwt");
+        if (token && !this.jwtHelper.isTokenExpired(token)){
+          return true;
+        }
+        alert("Please login or create a new account!");
+        this.router.navigate(["login"]);
+        return false;
+      /*if (this.isUserLoggedIn) {
         return true;
       }
-      alert("Please login or create a new account!");
-      this.router.navigate(["login"]);
-      return false;
-    /*if (this.isUserLoggedIn) {
-      return true;
+      else {
+        alert("Please login or create a new account!");
+        this.router.navigate(['login']);
+        return false;
+      }*/
     }
-    else {
-      alert("Please login or create a new account!");
-      this.router.navigate(['login']);
-      return false;
-    }*/
-  }
 
-  // for new users to register
-  addUser(newUser: user): Observable<any> {
-    return this.http.post<any>(`https://localhost:7102/api/Users`, newUser);
-  } 
+    // for new users to register
+    addUser(newUser: user): Observable<any> {
+      return this.http.post<any>(`https://localhost:7102/api/Users`, newUser);
+    } 
   
-  // for user to login
-  loginUser(username: string, password: string): Observable<any> {
-    let loginInfo = {
-      username,
-      password
-    }
-    return this.http.post<any>(`https://localhost:7102/api/Users/login`, loginInfo, { observe: 'response' })
-  } 
+    // for user to login
+    loginUser(username: string, password: string): Observable<any> {
+      let loginInfo = {
+        username,
+        password
+      }
+      return this.http.post<any>(`https://localhost:7102/api/Users/login`, loginInfo, { observe: 'response' })
+    } 
 
-  // gets user data from backend to display on user's Home page
-  getUserInfo(userId: string|number): Observable<any> {
-    let myHeaders = {
-      Authorization: "" + localStorage.getItem("jwt")
+    // gets user data from backend to display on user's Home page
+    getUserInfo(userId: string|number): Observable<any> {
+      let myHeaders = {
+        Authorization: "Bearer " + localStorage.getItem("jwt")
+      }
+      return this.http.get(`${this.apiServerUrl}/api/Users/${userId}`, {headers: myHeaders});
     }
-    return this.http.get(`${this.apiServerUrl}/api/Users/${userId}`, {headers: myHeaders});
-  }
 
-  isLoggedIn(): boolean {
-    if(!localStorage.getItem("jwt")) {
-      window.alert("You are not logged in");
-      this.router.navigate(["login"]);
-      return false;
+    isLoggedIn(): boolean {
+      if(!localStorage.getItem("jwt")) {
+        window.alert("You are not logged in");
+        this.router.navigate(["login"]);
+        return false;
+      }
+      else {
+        this.isUserLoggedIn = true;
+        console.log("isUserLoggedIn: " + this.isUserLoggedIn);
+        return true;
+      }
     }
-    else {
-      this.isUserLoggedIn = true;
-      console.log("isUserLoggedIn: " + this.isUserLoggedIn);
-      return true;
-    }
-  }
 
     // getting one user
     getOneUser(reqID: number): Observable<user>{
       return this.http.get<user>(`${this.apiServerUrl}/${reqID}`)
     }
       // editing a user 
-    updateUser(editUserID: number, userToEdit: user) :Observable<user> {
+    /*updateUser(editUserID: number, userToEdit: user) :Observable<user> {
       return this.http.put<user>('https://localhost:7102/api/Users' + '/' +editUserID, userToEdit);
+    }*/
+
+   // This was what was here for the edit user at first.
+    updateUser(editID: number, edittedInfo: user): Observable<user>{
+    return this.http.put<user>(`${this.apiServerUrl}/api/Users/${editID}`, edittedInfo)
     }
-    //This was what was here for the edit user at first.
-  //updateUser(userID: number, edittedInfo: user): Observable<user>{
-    //return this.http.put<user>(`${this.apiServerUrl}/${userID}`, edittedInfo)
-  //}
 
 
-  createPost(newPostData) {
-    return this.http.post('https://localhost:7102/api/Posts', newPostData);
-  }
+    createPost(newPostData) {
+      return this.http.post('https://localhost:7102/api/Posts', newPostData);
+    }
 
-  editPost(editPostId: number, postToEdit: post) :Observable<post> {
-    return this.http.put<post>('https://localhost:7102/api/Posts' + '/' +editPostId, postToEdit);
-  }
+    editPost(editPostId: number, postToEdit: post) :Observable<post> {
+      return this.http.put<post>('https://localhost:7102/api/Posts' + '/' +editPostId, postToEdit);
+    }
 
-   deletePost(deletePostId: number) :Observable<any> {
-    return this.http.delete<any>('https://localhost:7102/api/Posts/' + deletePostId);
-   }
+    deletePost(deletePostId: number) :Observable<any> {
+      return this.http.delete<any>('https://localhost:7102/api/Posts/' + deletePostId);
+    }
    
   
 }

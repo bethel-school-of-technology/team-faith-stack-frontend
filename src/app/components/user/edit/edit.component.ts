@@ -48,14 +48,16 @@ export class UserEditComponent implements OnInit {
     (error: HttpErrorResponse) => {
       alert(error.message);
     }*/
-    this.usersService.updateUser(this.editUser.userID, this.editUser)
-    .subscribe(
-      response => {
-      this.router.navigate(["./post"])
-    },
+    /*this.usersService.updateUser(this.editUser.userID, this.editUser)
+    .subscribe()*/
+      this.usersService.getUserById(this.userID)
+      .subscribe(response => {
+        this.editUser = response;
+      },
       (error: HttpErrorResponse) => {
         alert(error.message);
-    });
+      }
+      );
   }
 
 }
