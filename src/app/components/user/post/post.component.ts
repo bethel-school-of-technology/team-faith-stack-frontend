@@ -25,8 +25,9 @@ export class UserPostComponent implements OnInit {
   ngOnInit(): void {
    
   //this.userID = parseInt(this.route.snapshot.paramMap.get("userId"));
-
-    this.usersService.getUserInfo().subscribe(response => {
+    localStorage.getItem('userId')
+    this.usersService.getUserInfo(localStorage.getItem('userId')).subscribe(response => {
+      console.log(response);
       this.currentUser = response;
     }),
     (error: HttpErrorResponse) => {

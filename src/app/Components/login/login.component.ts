@@ -27,9 +27,12 @@ import { UsersService } from 'src/app/services/users.service';
     this.usersService.loginUser(this.loginForm.username, this.loginForm.password)
     .subscribe({
       next: res => {
-        const token = res.token;
+        console.log('test', res);
+        const token = res.body.token;
         localStorage.setItem("jwt", token); 
+        localStorage.setItem("userId", res.body.userId); 
         this.invalidLogin = false; 
+        console.log(res);
         this.router.navigate(["/user/post"]);
       },
       error: (err: HttpErrorResponse) => this.invalidLogin = true

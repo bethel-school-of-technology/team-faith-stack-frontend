@@ -28,6 +28,7 @@ export class UsersService implements CanActivate {
       if (token && !this.jwtHelper.isTokenExpired(token)){
         return true;
       }
+      alert("Please login or create a new account!");
       this.router.navigate(["login"]);
       return false;
     /*if (this.isUserLoggedIn) {
@@ -55,11 +56,11 @@ export class UsersService implements CanActivate {
   } 
 
   // gets user data from backend to display on user's Home page
-  getUserInfo(): Observable<any> {
+  getUserInfo(userId: string|number): Observable<any> {
     let myHeaders = {
-      Authorization: "Bearer " + localStorage.getItem("jwt")
+      Authorization: "" + localStorage.getItem("jwt")
     }
-    return this.http.get(`${this.apiServerUrl}/api/users/find/username`, {headers: myHeaders});
+    return this.http.get(`${this.apiServerUrl}/api/Users/${userId}`, {headers: myHeaders});
   }
 
   isLoggedIn(): boolean {
@@ -80,9 +81,13 @@ export class UsersService implements CanActivate {
       return this.http.get<user>(`${this.apiServerUrl}/${reqID}`)
     }
       // editing a user 
-  updateUser(editID: number, edittedInfo: user): Observable<user>{
-    return this.http.put<user>(`${this.apiServerUrl}/${editID}`, edittedInfo)
-  }
+    updateUser(editUserID: number, userToEdit: user) :Observable<user> {
+      return this.http.put<user>('https://localhost:7102/api/Users' + '/' +editUserID, userToEdit);
+    }
+    //This was what was here for the edit user at first.
+  //updateUser(userID: number, edittedInfo: user): Observable<user>{
+    //return this.http.put<user>(`${this.apiServerUrl}/${userID}`, edittedInfo)
+  //}
 
 
   createPost(newPostData) {
