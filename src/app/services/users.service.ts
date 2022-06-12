@@ -81,9 +81,13 @@ export class UsersService implements CanActivate {
       return this.http.get<user>(`${this.apiServerUrl}/${reqID}`)
     }
       // editing a user 
-  updateUser(editID: number, edittedInfo: user): Observable<user>{
-    return this.http.put<user>(`${this.apiServerUrl}/${editID}`, edittedInfo)
-  }
+    updateUser(editUserID: number, userToEdit: user) :Observable<user> {
+      return this.http.put<user>('https://localhost:7102/api/Users' + '/' +editUserID, userToEdit);
+    }
+    //This was what was here for the edit user at first.
+  //updateUser(userID: number, edittedInfo: user): Observable<user>{
+    //return this.http.put<user>(`${this.apiServerUrl}/${userID}`, edittedInfo)
+  //}
 
 
   createPost(newPostData) {
