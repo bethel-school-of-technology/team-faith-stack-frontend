@@ -748,6 +748,10 @@ button:hover {
         width: 100%;
     }
 
+    .post-loop{
+        margin-left: 30px;
+    }
+
     .navbar ul li {
         list-style:none;
         display: inline-block;
